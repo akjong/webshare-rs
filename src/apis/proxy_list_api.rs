@@ -11,19 +11,19 @@ pub trait ProxyListApi {
     async fn get_proxy_list(
         &self,
         query_params: &ProxyListQueryParams,
-    ) -> Result<WebshareResult<Vec<Proxy>>>;
+    ) -> Result<WebshareResult<Proxy>>;
 }
 
 impl ProxyListApi for WebShareClient {
     async fn get_proxy_list(
         &self,
         query_params: &ProxyListQueryParams,
-    ) -> Result<WebshareResult<Vec<Proxy>>> {
+    ) -> Result<WebshareResult<Proxy>> {
         let request = self
             .request_builder(reqwest::Method::GET, PROXY_LIST_API_PATH)
             .query(query_params);
         let response = request.send().await?.error_for_status()?;
-        let result = response.json::<WebshareResult<Vec<Proxy>>>().await?;
+        let result = response.json::<WebshareResult<Proxy>>().await?;
         Ok(result)
     }
 }
