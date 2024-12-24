@@ -1,3 +1,5 @@
+const DEFAULT_HOST: &str = "https://proxy.webshare.io";
+
 #[derive(Default, Debug, Clone)]
 pub struct WebShareClient {
     pub client: reqwest::Client,
@@ -6,10 +8,10 @@ pub struct WebShareClient {
 }
 
 impl WebShareClient {
-    pub fn new(host: &str, token: &str) -> Self {
+    pub fn new(token: &str) -> Self {
         Self {
             client: reqwest::Client::new(),
-            host: host.to_string(),
+            host: DEFAULT_HOST.to_string(),
             token: token.to_string(),
         }
     }
