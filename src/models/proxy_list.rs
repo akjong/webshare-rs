@@ -42,7 +42,7 @@ pub struct WebshareResult<T> {
 }
 
 #[derive(Debug, Deserialize, Serialize)]
-pub struct ProxyList {
+pub struct Proxy {
     pub id: String,
     pub username: String,
     pub password: String,
