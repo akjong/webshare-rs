@@ -6,9 +6,9 @@ Each sub-user can have separate limits and proxy list. The proxy list of the use
 
 You can make requests to [Proxy Configuration](/subuser#proxy-configuration), [Proxy List](/subuser#proxy-list) and [Proxy Stats](/subuser#proxy-stats) APIs as a sub-user using the `X-Subuser` header. More [examples below](/subuser#masquerade-user).
 
-This API is only available for after accepting additional terms for Webshare sub-user portal. If you wish to gain access to this API, please complete the form at <https://proxy.webshare.io/subuser/>[ (opens in a new tab)](https://proxy.webshare.io/subuser/)
+This API is only available for after accepting additional terms for Webshare sub-user portal. If you wish to gain access to this API, please complete the form at <https://proxy.webshare.io/subuser/>[(opens in a new tab)](https://proxy.webshare.io/subuser/)
 
-### Sub-User object
+## Sub-User object
 
 You can use the API to create, retrieve, update and delete each individual sub-user.
 
@@ -24,10 +24,10 @@ Attributes| Type| Description
 `updated_at`| `datetime`| Read-only field to indicate when this user was last updated.  
 `bandwidth_use_start_date`| `datetime`| The time we start calculating the user bandwidth use. You can edit this field.  
 `bandwidth_use_end_date`| `datetime`| The time the user bandwidth use will reset. Read-only field.  
-  
+
 ### In JSON Format
-    
-    
+
+
     {
        "id":7,
        "label":"Test User",

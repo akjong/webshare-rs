@@ -6,18 +6,15 @@ Webshare requires two factor authentication on all of its endpoints. This sectio
 
 Webshare currently supports following 2FA methods:
 
-  * Email: Enabled by default on your account.
-  * TOTP: You can enroll a TOTP device (e.g. Google Authenticator, Authy) to generate 2FA codes.
-
-
+* Email: Enabled by default on your account.
+* TOTP: You can enroll a TOTP device (e.g. Google Authenticator, Authy) to generate 2FA codes.
 
 The 2FA only applies to login tokens. API tokens are not affected by 2FA.
 
 ## When to enter 2FA?
 
 You will receive 403 Forbidden response from any API with the following message when 2FA is required:
-    
-    
+
     {
         "detail": "Two factor authentication is needed.", 
         "code": "2fa_needed"
@@ -35,12 +32,11 @@ Attributes| Type| Description
 `secret_key`| `string`| Hex formatted secret key for TOTP device. Only shown right after creating a `device_totp`. Otherwise this field is hidden.  
 `created_at`| `string`| The date the 2FA method was created. (Read-only)  
 `updated_at`| `string`| The date the 2FA method was last updated. (Read-only)  
-  
+
 ### In JSON format
 
 twofactorauthmethod.json
-    
-    
+
     {
       "id": 137,
       "type": "email_code",

@@ -8,12 +8,12 @@ You can use this API to update your payment method. The update payment method AP
 
 This API endpoint requires recaptcha validation.
 
-### Request fields
+## Request fields
 
 Parameter| Type| Description  
 ---|---|---  
 `recaptcha`| `string`| The recaptcha token (can be invisible recaptcha).  
-  
+
 ### Response fields
 
 Attributes| Type| Description  
@@ -21,19 +21,18 @@ Attributes| Type| Description
 `pending_payment`| `integer`| The ID of the PendingPayment instance.  
 `stripe_client_secret`| `string`| The `client_secret` for the Stripe [SetupIntent](https://stripe.com/docs/js/setup_intents/confirm_setup).  
 `stripe_setup_intent`| `string`| The ID of the Stripe [SetupIntent](https://stripe.com/docs/js/setup_intents/confirm_setup).  
-  
+
 ### Request & Response
-    
-    
+
+
     POST https://proxy.webshare.io/api/v2/payment/method/
 
 PythonJavascriptcURL
 
 update_payment_method.py
-    
-    
+
     import requests
-     
+
     response = requests.post(
         "https://proxy.webshare.io/api/v2/payment/method/",
         json={
@@ -41,14 +40,13 @@ update_payment_method.py
         },
         headers={"Authorization": "Token APIKEY"},
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "pending_payment": 3,
       "stripe_client_secret": "...",

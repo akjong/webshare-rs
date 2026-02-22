@@ -6,22 +6,21 @@ Submit security code
 
 This endpoint lets you submit a security code for a verification flow that is two alphanumeric characters you can find in Webshare charges in your bank statement.
 
-### Parameters
+## Parameters
 
 Parameter| Type| Description  
 ---|---|---  
 `Verification ID`| `string`| The ID of the verification flow, this parameter should be a route parameter included in the URL.  
 `security_code`| `string`| The security code you want to submit.  
-  
+
 ### Examples
 
 PythonJavascriptcURL
 
 submit-security-code.py
-    
-    
+
     import requests
-     
+
     response = requests.post(
         "https://proxy.webshare.io/api/v2/verification/flow/<Verification ID>/submit_verification_code/",
         json={
@@ -32,8 +31,7 @@ submit-security-code.py
     response.json()
 
 The commands above return JSON structured like this:
-    
-    
+
     {
       "id": 1,
       "type": "acceptable_use_violation",

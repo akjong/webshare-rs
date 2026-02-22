@@ -10,7 +10,7 @@ Subscription stays with the user even after a user switches to a new Plan. Where
 
 Each Webshare account has 1 subscription and 1 active plan associated with it. There may be multiple in-active plans.
 
-Subscription object holds general information about the user subscription   
+Subscription object holds general information about the user subscription
 e.g. start/end dates.
 
 [See the Plan API](/subscription/plan).
@@ -39,10 +39,10 @@ Attributes| Type| Description
 `throttled`| `bool`| Whether the subscription is throttled or not. Mostly throttling is due to high bandwidth usage with low number of proxies.  
 `created_at`| `string`| The timestamp of when this instance was created.  
 `updated_at`| `string`| The timestamp when this instance was last updated.  
-  
+
 ### In JSON format
-    
-    
+
+
     {
       "id": 1,
       "plan": 2,
@@ -69,8 +69,7 @@ Attributes| Type| Description
 ## Get Subscription
 
 This endpoint returns the subscription object associated with the account. There is only 1 subscription associated with each account.
-    
-    
+
     GET https://proxy.webshare.io/api/v2/subscription/
 
 ### Requests & Response
@@ -78,22 +77,20 @@ This endpoint returns the subscription object associated with the account. There
 PythonJavascriptcURL
 
 get_subscription.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
         "https://proxy.webshare.io/api/v2/subscription/",
         headers={"Authorization": "Token APIKEY"}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "id": 1,
       "plan": 2,

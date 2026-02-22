@@ -6,30 +6,28 @@ Transactions
 
 This endpoint retrieves all transactions associated with the user in [paginated](/#pagination) format with [filtering & ordering](/#filtering-amp-ordering) enabled.
 
-### Request & Response
-    
-    
+## Request & Response
+
+
     GET https://proxy.webshare.io/api/v2/payment/transaction/
 
 PythonJavascriptcURL
 
 list_transactions.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
       "https://proxy.webshare.io/api/v2/payment/transaction/",
       headers={"Authorization": "Token APIKEY"}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "count": 1,
       "next": null,
@@ -69,19 +67,18 @@ This endpoint retrieves the transaction by ID.
 Parameter| Type| Description  
 ---|---|---  
 `ID`| `integer`| The ID of the transaction to retrieve  
-  
+
 ### Request & Response
-    
-    
+
+
     GET https://proxy.webshare.io/api/v2/payment/transaction/<ID>/
 
 PythonJavascriptcURL
 
 get_transaction.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
         "https://proxy.webshare.io/api/v2/payment/transaction/1/",
         headers={"Authorization": "Token APIKEY"}
@@ -91,8 +88,7 @@ get_transaction.py
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "id": 1,
       "status": "completed",

@@ -7,8 +7,7 @@ List replaced proxy
 ## List replaced proxies
 
 This endpoint returns the replaced proxy list in [paginated](/#pagination) format with [filtering & ordering](/#filtering-amp-ordering) enabled.
-    
-    
+
     GET https://proxy.webshare.io/api/v2/proxy/list/replaced/
 
 ### URL Parameters
@@ -16,28 +15,26 @@ This endpoint returns the replaced proxy list in [paginated](/#pagination) forma
 Parameter| Type| Description  
 ---|---|---  
 `proxy_list_replacement`| `int`| Filter the replaced proxies by a specific Proxy replacement.  
-  
+
 ### Request & Response
 
 PythonJavascriptcURL
 
 list_replaced_proxies.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
         "https://proxy.webshare.io/api/v2/proxy/list/replaced/",
         headers={"Authorization": "Token APIKEY"}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "count": 10,
       "next": null,

@@ -4,7 +4,7 @@ API Keys
 
 You can use the API keys to authorize your access. All API keys have the same permissions and full account access.
 
-### API key object
+## API key object
 
 Each API key has the following fields
 
@@ -15,10 +15,10 @@ Attributes| Type| Description
 `label`| `string`| The label for this API key. May be duplicate with other labels.  
 `created_at`| `string`| The timestamp when this instance was created.  
 `updated_at`| `string`| The timestamp when this instance was last updated.  
-  
+
 ### In JSON Format
-    
-    
+
+
     {
       "id": 1337,
       "key": "abc1234...zzz",

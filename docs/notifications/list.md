@@ -6,26 +6,25 @@ List notifications
 
 This endpoint returns the notifications in [paginated](/#pagination) format.
 
-### Parameters
+## Parameters
 
 Parameter| Type| Description  
 ---|---|---  
 `dismissed_at__isnull`| `boolean`| Set to `True` to show only dismissed notifications.  
 `ordering`| `string`| Default ordering is `-created_at`. Available ordering fields are `id`, `created_at`, `dismissed_at`.  
 `type`| `string`| Filter by type.  
-  
+
 ### Request & Response
-    
-    
+
+
     GET https://proxy.webshare.io/api/v2/notification/
 
 PythonJavascriptcURL
 
 list_notifications.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
         "https://proxy.webshare.io/api/v2/notification/",
         headers={"Authorization": "Token APIKEY"}
@@ -35,8 +34,7 @@ list_notifications.py
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "count": 1,
       "next": null,

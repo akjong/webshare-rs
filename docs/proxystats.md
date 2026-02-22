@@ -25,7 +25,7 @@ Attributes| Type| Description
 `average_concurrency`| `number`| Average number of concurrent proxy request (estimated). Set to `null` if `is_projected=True`.  
 `average_rps`| `number`| Average proxy requests per second (estimated). Set to `null` if `is_projected=True`.  
 `last_request_sent_at`| `string`| The time last proxy request was sent. Must be within the 1 hour window. Set to `null` if `is_projected=True`.  
-  
+
 ### Error reason attributes
 
 Attributes| Type| Description  
@@ -35,10 +35,10 @@ Attributes| Type| Description
 `how_to_fix`| `string`| Guide for the end-user on how to fix the error.  
 `http_status`| `integer`| HTTP response status code the HTTP proxy endpoint may return for this particular error. May be `null`.  
 `count`| `integer`| Number of failed proxy requests with this error reason.  
-  
+
 ### In JSON format
-    
-    
+
+
     {
       "timestamp": "2022-08-11T17:00:00-07:00",
       "is_projected": false,

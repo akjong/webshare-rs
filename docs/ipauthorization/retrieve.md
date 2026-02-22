@@ -6,29 +6,27 @@ Get IP authorization
 
 This endpoint lets you retrieve an IP authorization. You can add a query-string parameter `plan_id` in case you want to target a specific plan otherwise it will use the default plan.
 
-### Parameters
+## Parameters
 
 Parameter| Type| Description  
 ---|---|---  
 `ID`| `string`| The ID of the IP authorization to retrieve.  
-  
+
 ### Request & Response
-    
-    
+
+
     GET https://proxy.webshare.io/api/v2/proxy/ipauthorization/<ID>/
 
 or in case of targeting a specific plan
-    
-    
+
     GET https://proxy.webshare.io/api/v2/proxy/ipauthorization/<ID>/?plan_id=<Plan ID>
 
 PythonJavascriptcURL
 
 get_ip_authorization.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
         "https://proxy.webshare.io/api/v2/proxy/ipauthorization/<ID>/",
         headers={"Authorization": "Token APIKEY"}
@@ -38,8 +36,7 @@ get_ip_authorization.py
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "id": 1337,
       "ip_address": "10.1.2.3",

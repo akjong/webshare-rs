@@ -4,23 +4,22 @@ List appeals
 
 # List appeals
 
-This endpoint returns the appeals you have submited for your account in [paginated](/#pagination) format.
+This endpoint returns the appeals you have submitted for your account in [paginated](/#pagination) format.
 
-### Parameters
+## Parameters
 
 Parameter| Type| Description  
 ---|---|---  
 `state`| `string`| Match only appeals that are under a specific state. Can be `approved`, `rejected` or `submitted`.  
-  
+
 ### Examples
 
 PythonJavascriptcURL
 
 list-appeals.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
         "https://proxy.webshare.io/api/v2/verification/appeal/",
         headers={"Authorization": "Token APIKEY"}
@@ -30,8 +29,7 @@ list-appeals.py
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "count": 1,
       "next": null,

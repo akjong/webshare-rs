@@ -20,16 +20,12 @@ Webshare API uses token to allow access to the API. You will receive token after
 
 Webshare API expects for the token to be included in all API requests to the server in a header that looks like the following: `Authorization: Token <TOKEN>`
 
-  
-
-
 PythonJavascriptCURL
 
 example.py
-    
-    
+
     import requests
-     
+
     requests.get(
       "https://proxy.webshare.io/api/v2/profile/",
       headers={ "Authorization": "Token APIKEY" }
@@ -54,7 +50,7 @@ Parameter| | Description
 `page_size`| ``| Number of elements returned in a page. Default page size is 25 (Optional field).  
 `page`| ``| The current page to retrieve. Default page is 1 (Optional field).  
 `starting_after`| ``| The ID of the last element of the current page. Default is `null` which means the most recent items. (Optional field).  
-  
+
 ### Response format
 
 Response is in JSON object format with the following fields.
@@ -65,25 +61,23 @@ Field| | Description
 `next`| ``| Full URL to the next page API resource. If there is no next page, set to `null`.  
 `previous`| ``| Full URL to the previous page API resource. If there is no previous page, set to `null`. If a page is using `starting_after` for pagination, `previous` field will not be available.  
 `results`| ``| List of elements which are paginated. If `page_size` is 25, you can expect up to 25 elements in the results.  
-  
+
 ### Example
 
 PythonJavascriptcURL
 
 example.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
       "https://proxy.webshare.io/api/v2/proxy/list/?page=4&page_size=10"
     )
-     
+
     response.json()
 
 response.json
-    
-    
+
     {
       "count": 35,
       "next": null,
@@ -107,7 +101,7 @@ API Name| | Rate
 `Proxy List Download Links`| ``| 30 requests every minute.  
 `Proxy List Endpoints`| ``| 60 requests every minute.  
 `Pricing Endpoints`| ``| 60 requests every minute.  
-  
+
 ⚠️
 
 Authentication and other security-sensitive endpoints may have stricter rate limits to protect account security.
@@ -129,20 +123,19 @@ You can add the request parameters as part of your URL.
 Query| Type| Description  
 ---|---|---  
 `ordering`| ``| Comma separated name of the fields. Default ordering is ascending. Minus indicates descending order  
-  
+
 ### Examples
 
 PythonJavascriptcURL
 
 example.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
       "https://proxy.webshare.io/api/v2/payment/transaction/?ordering=status,-created_at"
     )
-     
+
     response.json()
 
 ## Filtering
@@ -152,36 +145,31 @@ You can filter list resource endpoints by exact, greater than, less than and con
 ### Exact match
 
 Match the field to the given value. Can be used for any field type.
-    
-    
+
     ?status=completed
 
 ### Multi match
 
 Match the field to the given value. Can be used for any field type. Multiple values can be comma separated.
-    
-    
+
     ?status__in=completed,refunded
 
 ### Greater than
 
 Retrieve the fields with greater than given value. Can be used for datetime and number fields.
-    
-    
+
     `?amount__gt=1337`
 
 ### Less than
 
 Retrieve the fields with less than given value. Can be used for datetime and number fields.
-    
-    
+
     `?amount__lt=1337`
 
 ### Contains match
 
 Check if the given value is in the field. Can be used for string fields only.
-    
-    
+
     `?status__contains=completed`
 
 ### Examples
@@ -189,14 +177,13 @@ Check if the given value is in the field. Can be used for string fields only.
 PythonJavascriptcURL
 
 example.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
       "https://proxy.webshare.io/api/payment/transaction/?status=completed,refunded&amount__lt=1337"
     )
-     
+
     response.json()
 
 ## Search
@@ -206,20 +193,19 @@ You can perform text search on resource endpoints. Generally, only the text fiel
 PythonJavascriptcURL
 
 example.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
       "https://proxy.webshare.io/api/v2/payment/transaction/?search=Free"
     )
-     
+
     response.json()
 
 Query| Type| Description  
 ---|---|---  
 `search`| ``| The text search parameter.  
-  
+
 ## Errors
 
 The Webshare API uses the following error codes:
@@ -234,16 +220,15 @@ Error| Type| Description
 `406`| `Not Acceptable`| You requested a format that isn't json.  
 `429`| `Rate limited`| you have reached to the maximum number of requests you are allowed to send. Try again later.  
 `5xx`| `Server Error`| We had a problem with our server. We have been notified and working on fixing the issue. Try again later.  
-  
+
 ## Federated Access
 
 Federated access is only available to Webshare administrators.
 
 Add the `X-Webshare-Federated-Access` header to your API calls to retrieve data as a particular user.
-    
-    
+
     import requests
-     
+
     response = requests.get("https://proxy.webshare.io/api/v2/profile/", headers={
         "Authorization": "Token APIKEY",
         "X-Webshare-Federated-Access": "<User ID>"

@@ -6,24 +6,23 @@ Restore a notification
 
 This endpoint lets you restore a notification.
 
-### Parameters
+## Parameters
 
 Parameter| Type| Description  
 ---|---|---  
 `ID`| `string`| The ID of the notification to restore.  
-  
+
 ### Request & Response
-    
-    
+
+
     GET https://proxy.webshare.io/api/v2/notification/<ID>/restore/
 
 PythonJavascriptcURL
 
 restore_notification.py
-    
-    
+
     import requests
-     
+
     response = requests.post(
         "https://proxy.webshare.io/api/v2/notification/<ID>/restore/",
         headers={"Authorization": "Token APIKEY"}
@@ -33,8 +32,7 @@ restore_notification.py
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
         "id": 13,
         "type": "too_much_bandwidth_too_little_proxies",

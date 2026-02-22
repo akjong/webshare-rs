@@ -6,18 +6,17 @@ List API keys
 
 This endpoint returns the API keys in [paginated](/#pagination) format.
 
-### Request & Response
-    
-    
+## Request & Response
+
+
     GET https://proxy.webshare.io/api/v2/apikey/
 
 PythonJavascriptcURL
 
 example.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
         "https://proxy.webshare.io/api/v2/apikey/",
         headers={"Authorization": "Token APIKEY"}
@@ -27,8 +26,7 @@ example.py
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "count": 1,
       "next": null,

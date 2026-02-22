@@ -5,31 +5,28 @@ Get proxy config
 # Get proxy config
 
 This endpoint retrieves the proxy config. You need to add a query-string parameter `plan_id`.
-    
-    
+
     GET https://proxy.webshare.io/api/v3/proxy/config?plan_id=<PLAN-ID>
 
-### Request & Response
+## Request & Response
 
 PythonJavascriptcURL
 
 get_proxy_config.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
       "https://proxy.webshare.io/api/v3/proxy/config?plan_id=PLAN-ID",
       headers={ "Authorization": "Token APIKEY" }
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "request_timeout": 86400,
       "request_idle_timeout": 900,

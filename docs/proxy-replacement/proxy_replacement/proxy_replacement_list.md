@@ -8,43 +8,40 @@ List replacement
 
 This endpoint retrieves all existing proxy replacements associated with the user in [paginated](/#pagination) format with [filtering & ordering](/#filtering-amp-ordering) enabled. You can add a query-string parameter `plan_id` in case you want to target a specific plan otherwise it will use the default plan.
 
-### Parameters
+## Parameters
 
 Parameter| Type| Description  
 ---|---|---  
 `ordering`| `string`| Default ordering is `id`. Available ordering fields are `id`, `created_at`, `completed_at`.  
 `dry_run`| `boolean`| Filter proxy replacements with whether it is dry run or not.  
 `state`| `string`| Filter proxy replacements by state  
-  
+
 ### Request & Response
-    
-    
+
+
     GET https://proxy.webshare.io/api/v3/proxy/replace/
 
 or in case of targeting a specific plan
-    
-    
+
     POST https://proxy.webshare.io/api/v3/proxy/replace/?plan_id=<Plan ID>
 
 PythonJavascriptcURL
 
 list_proxy_replacement.py
-    
-    
+
     import requests
-     
+
     response = requests.post(
         "https://proxy.webshare.io/api/v3/proxy/replace/",
         headers={"Authorization": "Token APIKEY"}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "count": 1,
       "next": null,

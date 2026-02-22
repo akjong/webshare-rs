@@ -9,29 +9,27 @@ Payment methods
 This endpoint retrieves all payment methods associated with the user in [paginated](/#pagination) format with [filtering & ordering](/#filtering-amp-ordering) enabled.
 
 ### Request & Response
-    
-    
+
+
     GET https://proxy.webshare.io/api/v2/payment/method/
 
 PythonJavascriptcURL
 
 list_payment_methods.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
       "https://proxy.webshare.io/api/v2/payment/method/",
       headers={"Authorization": "Token APIKEY"}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "count": 1,
       "next": null,
@@ -65,31 +63,29 @@ This endpoint retrieves the payment method by ID. You can find the active paymen
 Parameter| Type| Description  
 ---|---|---  
 `id`| `integer`| The ID of the payment method to retrieve  
-  
+
 ### Request & Response
-    
-    
+
+
     GET https://proxy.webshare.io/api/v2/payment/method/1/
 
 PythonJavascriptcURL
 
 get_payment_methods.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
         "https://proxy.webshare.io/api/v2/payment/method/1/",
         headers={"Authorization": "Token APIKEY"}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "id": 1,
       "type": "StripeCard",

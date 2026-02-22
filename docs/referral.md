@@ -2,7 +2,7 @@ Referral & Affiliate
 
 # Referral & Affiliate
 
-You can earn credits or payouts directly to your PayPal account by referring users to Webshare. Switching to affiliate program via the API indicates your consent for the additional affiliate agreement <https://www.webshare.io/affiliate-agreement>[ (opens in a new tab)](https://www.webshare.io/affiliate-agreement).
+You can earn credits or payouts directly to your PayPal account by referring users to Webshare. Switching to affiliate program via the API indicates your consent for the additional affiliate agreement <https://www.webshare.io/affiliate-agreement>[(opens in a new tab)](https://www.webshare.io/affiliate-agreement).
 
 ## Referral Config Object
 
@@ -32,35 +32,33 @@ Attributes| Type| Description
 `referral_payment_pending_days`| `number`| Grace period for a referral credit/payouts to become available. During the pending period, if the payment is reversed, the credits will be reversed too.  
 `created_at`| `string`| The timestamp of when this instance was created.  
 `updated_at`| `string`| The timestamp when this instance was last updated.  
-  
+
 ## Get Referral Config
 
 Retrieve a referral config.
 
 ### Request & Response
-    
-    
+
+
     GET https://proxy.webshare.io/api/v2/referral/config/
 
 PythonJavascriptcURL
 
 get_referral_object.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
         "https://proxy.webshare.io/api/v2/referral/credit/",
         headers={"Authorization": "Token APIKEY"}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "id": 1,
       "mode": "payout",
@@ -91,17 +89,16 @@ response.json
 This endpoint updates the referral config. The only writable fields are `mode` and `paypal_payout_email`.
 
 ### Request & Response
-    
-    
+
+
     PATCH https://proxy.webshare.io/api/v2/referral/credit/<ID>/
 
 PythonJavascriptcURL
 
 update_referral_object.py
-    
-    
+
     import requests
-     
+
     response = requests.patch(
         "https://proxy.webshare.io/api/v2/referral/config/",
         json={
@@ -110,14 +107,13 @@ update_referral_object.py
         },
         headers={"Authorization": "Token APIKEY"}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "id": 1,
       "mode": "payout",

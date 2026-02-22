@@ -13,8 +13,7 @@ You can register for a new account using the API requests as follows.
 ℹ️
 
 This API endpoint requires recaptcha validation. This means that you should not be using this API endpoint programmatically and only use it from the [Webshare Dashboard](https://proxy.webshare.io/dashboard/).
-    
-    
+
     POST https://proxy.webshare.io/api/v2/register/
 
 Parameter| Type| Description  
@@ -24,16 +23,15 @@ Parameter| Type| Description
 `recaptcha`| `string`| The recaptcha token (can be invisible recaptcha).  
 `tos_accepted`| `boolean`| Must be `true` to process the request.  
 `marketing_email_accepted`| `boolean`| Whether the service should send marketing emails to the customers.  
-  
+
 ### Request & Response
 
 PythonJavascriptcURL
 
 example.py
-    
-    
+
     import requests
-     
+
     response = requests.post(
         "https://proxy.webshare.io/api/v2/register/",
         json={
@@ -49,8 +47,7 @@ example.py
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     { "token": "...", "logged_in_existing_user": false }
 
 ## Sign in with Local Account
@@ -60,8 +57,7 @@ You can login to an existing account using the API requests as follows.
 ℹ️
 
 This API endpoint requires recaptcha validation. This means that you should not be using this API endpoint programmatically and only use it from the [Webshare Dashboard](https://proxy.webshare.io/dashboard/).
-    
-    
+
     POST https://proxy.webshare.io/api/v2/login/
 
 Parameter| Type| Description  
@@ -69,16 +65,15 @@ Parameter| Type| Description
 `email`| `string`| Email address previously registered with.  
 `password`| `string`| Password previously registered with.  
 `recaptcha`| `string`| The recaptcha token (can be invisible recaptcha).  
-  
+
 ### Request & Response
 
 PythonJavascriptcURL
 
 login.py
-    
-    
+
     import requests
-     
+
     response = requests.post(
         "https://proxy.webshare.io/api/v2/login/",
         json={
@@ -92,8 +87,7 @@ login.py
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     { "token": "..." }
 
 [Registration and Login](/registerandlogin "Registration and Login")[Social account](/registerandlogin/social-account "Social account")

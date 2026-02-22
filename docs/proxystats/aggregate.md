@@ -6,30 +6,28 @@ Aggregate statistics
 
 Aggregate the proxy stats for the given period. Useful for showing the total proxy use in the subscription period. You can add a query-string parameter `plan_id` in case you want to target a specific plan otherwise it will use the default plan.
 
-### Parameters
+## Parameters
 
 Parameter| Type| Description  
 ---|---|---  
 `timestamp__lte`| `string`| The [timestamp](https://en.wikipedia.org/wiki/ISO_8601) of the stats will be less than this. If given a date in the future, projected stats will be included for each hour between now and the given date. Cannot be after the `subscription.end_date`.  
 `timestamp__gte`| `string`| The [timestamp](https://en.wikipedia.org/wiki/ISO_8601) of the stats will be greater than this. Must be before the `timestamp__lte` field. Cannot be older than 90 days from today.  
-  
+
 ### Request & Response
-    
-    
+
+
     GET https://proxy.webshare.io/api/v2/stats/aggregate/
 
 or in case of targeting a specific plan
-    
-    
+
     GET https://proxy.webshare.io/api/v2/stats/aggregate/?plan_id=<Plan ID>
 
 PythonJavascriptcURL
 
 aggregate.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
         "https://proxy.webshare.io/api/v2/stats/aggregate/", {
           "timestamp__lte":"2022-09-09T23:34:00.095501-07:00",
@@ -37,14 +35,13 @@ aggregate.py
         },
         headers={"Authorization": "Token APIKEY"}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "bandwidth_projected": 100000,
       "bandwidth_total": 5000,

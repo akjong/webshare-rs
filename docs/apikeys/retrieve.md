@@ -6,24 +6,23 @@ Retrieve API key
 
 This endpoint lets you retrieve an API key.
 
-### URL parameters
+## URL parameters
 
 Parameter| Type| Description  
 ---|---|---  
 `ID`| `integer`| The ID of the API key to retrieve.  
-  
+
 ## Request & Response
-    
-    
+
+
     GET https://proxy.webshare.io/api/v2/apikey/<ID>/
 
 PythonJavascriptcURL
 
 example.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
         "https://proxy.webshare.io/api/v2/apikey/<ID>/",
         headers={"Authorization": "Token APIKEY"}
@@ -33,8 +32,7 @@ example.py
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "id": 1337,
       "key": "abc1234...zzz",

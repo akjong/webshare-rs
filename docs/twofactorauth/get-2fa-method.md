@@ -5,8 +5,7 @@ Get 2FA Method
 ## Get 2FA Method
 
 Every account by default has 2FA with Email enabled. This API lets you get the active 2FA method for your account.
-    
-    
+
     GET https://proxy.webshare.io/api/v2/twofactorauth/method/current/
 
 ### Request & Response
@@ -14,10 +13,9 @@ Every account by default has 2FA with Email enabled. This API lets you get the a
 PythonJavascriptcURL
 
 change_email_request.py
-    
-    
+
     import requests
-     
+
     response = requests.post(
         "https://proxy.webshare.io/api/v2/twofactorauth/method/current/",
         json={
@@ -26,14 +24,13 @@ change_email_request.py
         },
         headers={"Authorization": "Token APIKEY"}
     )
-     
+
     assert response.status_code == 204
 
 the commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "id": 137,
       "type": "device_totp",

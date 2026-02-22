@@ -19,17 +19,16 @@ Attributes| Type| Description
 `id`| `string`| Unique identifier of the proxy instance.  
 `username`| `string`| Proxy username.  
 `password`| `string`| Proxy password.  
-`proxy_address`| `string`| IP Address of the proxy. In Direct Connection mode, connect to this IP address. In Backbone Connection mode, connect to `p.webshare.io`. This field is `null if `plan.pool_filter`is`residential`.  
+`proxy_address`| `string`| IP Address of the proxy. In Direct Connection mode, connect to this IP address. In Backbone Connection mode, connect to `p.webshare.io`. This field is `null if`plan.pool_filter`is`residential`.  
 `port`| `int`| Port used to connect to the proxies. In Backbone mode, the port is always set for IP Authorization.  
 `valid`| `boolean`| If the proxy is working as expected. Webshare checks proxies once every 30 seconds.  
 `last_verification`| `string`| Last time the proxy was checked.  
 `country_code`| `string`| The [country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the proxy.  
 `city_name`| `string`| The city name of the proxy.  
 `created_at`| `string`| The timestamp of when this instance was created.  
-  
+
 proxy_object.json
-    
-    
+
     {
       "id": "d-10513",
       "username": "username",

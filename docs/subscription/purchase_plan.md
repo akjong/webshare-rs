@@ -10,7 +10,7 @@ The purchase API uses the same parameters as the [Subscription pricing](/subscri
 
 This API endpoint requires recaptcha validation if a payment is required. If you have enough account credits, no payment is required. When a payment is required you should not be using this API endpoint programmatically and only use it from the Webshare Dashboard.
 
-### Request fields
+## Request fields
 
 The purchase API uses the same parameters as the [Subscription pricing](/subscription/pricing) endpoint with 2 additional fields: `payment_method`, `behavior`.
 
@@ -19,7 +19,7 @@ Parameter| Type| Description
 `behavior`| `string`| Can be 2 options. 1) `replace`, (default value) the new purchased plan will replace the old one, this option is only supported for subscriptions with a single plan. 2) `add`, for adding the plan to the subscription.  
 `payment_method`| `string`| Can be 3 unique options. 1) `null`, use the payment on file (same as `subscription.payment_method`). 2) Use an existing PaymentMethod id. 3) Add a new payment by using [Stripe PaymentMethod](https://stripe.com/docs/js/payment_methods) ID (usually starts with "pm_...").  
 `recaptcha`| `string`| The recaptcha token (can be invisible recaptcha).  
-  
+
 ### Response fields
 
 Attributes| Type| Description  
@@ -30,19 +30,18 @@ Attributes| Type| Description
 `stripe_client_secret`| `string`| The `client_secret` for the Stripe [PaymentIntent](https://stripe.com/docs/js/payment_intents/confirm_card_payment). Only present if `payment_required == true`.  
 `stripe_payment_intent`| `string`| The ID of the Stripe [PaymentIntent](https://stripe.com/docs/js/payment_intents/confirm_card_payment). Only present if `payment_required == true`.  
 `stripe_payment_method`| `string`| The ID of the Stripe [PaymentMethod](https://stripe.com/docs/js/payment_methods/create_payment_method). Only present if `payment_required == true`.  
-  
+
 ### Request & Response
-    
-    
+
+
     POST https://proxy.webshare.io/api/v2/subscription/checkout/purchase/
 
 PythonJavascriptcURL
 
 purchase_plan.py
-    
-    
+
     import requests
-     
+
     response = requests.post(
         "https://proxy.webshare.io/api/v2/subscription/checkout/purchase/",
         json={
@@ -63,14 +62,13 @@ purchase_plan.py
         },
         headers={"Authorization": "Token APIKEY"},
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "payment_required": true,
       "plan": 2,

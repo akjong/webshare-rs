@@ -168,7 +168,7 @@ Run `just ci` before submitting to ensure lint and tests pass.
 
 ## Changelog
 
-See [CHANGELOG.md](CHANGELOG.md) for the full history of changes.
+See [GitHub releases](https://github.com/akjong/webshare-rs/releases) for the full history of changes.
 
 ## License
 

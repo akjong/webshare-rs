@@ -5,24 +5,21 @@ Update proxy config
 # Update proxy config
 
 This endpoint updates the proxy config. See [Proxy Config Object](/proxy-config#the-proxy-config-object) for fields that can be updated. You can add a query-string parameter `plan_id` in case you want to target a specific plan otherwise it will use the default plan.
-    
-    
+
     PATCH https://proxy.webshare.io/api/v2/proxy/config/
 
 or in case of targeting a specific plan
-    
-    
+
     PATCH https://proxy.webshare.io/api/v2/proxy/config/?plan_id=<Plan ID>
 
-### Request & Response
+## Request & Response
 
 PythonJavascriptcURL
 
 update_proxy_config.py
-    
-    
+
     import requests
-     
+
     response = requests.patch(
         "https://proxy.webshare.io/api/v2/proxy/config/",
         json={
@@ -30,14 +27,13 @@ update_proxy_config.py
         },
         headers={"Authorization": "Token APIKEY"}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "id": 1,
       "state": "completed",

@@ -14,22 +14,20 @@ Parameter| Type| Description
 `request_threshold`| `null`| Previously indicated the threshold number of requests that would trigger verification for this category. Now always returns null.  
 `id_verification_required`| `boolean`| Whether this verification category requires ID verification when triggered.  
 `id_verification_restores_access`| `boolean`| Whether this verification category restores proxy access when ID verification is completed.  
-  
+
 ### Examples
-    
-    
+
+
     import requests
-     
+
     response = requests.get("https://proxy.webshare.io/api/v2/verification/categories/")
     response.json()
-    
-    
+
     curl "https://proxy.webshare.io/api/v2/verification/categories/" \
       -H "Authorization: Token APIKEY"
 
 > The above command returns JSON structured like this:
-    
-    
+
     {
         "requests_to_authentication_pages": {
             "description": "Large number of requests to login/sign-up pages requires additional verification. Large number of login attempts with different credentials is strictly forbidden. Signing up for large number of accounts on some platforms may require ID verification.",

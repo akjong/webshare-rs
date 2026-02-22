@@ -6,15 +6,14 @@ Abuse reports
 
 This endpoint returns the abuse reports that are raised against your account in [paginated](/#pagination) format. In case the account is suspended the account verification flow ID will come with the response.
 
-### Examples
+## Examples
 
 PythonJavascriptcURL
 
 list-abuse-reports.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
         "https://proxy.webshare.io/api/v2/verification/abuse_report/",
         headers={"Authorization": "Token APIKEY"}
@@ -24,8 +23,7 @@ list-abuse-reports.py
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "count": 1,
       "next": null,

@@ -20,12 +20,11 @@ Attributes| Type| Description
 `created_at`| `string`| The timestamp of when this verification started.  
 `updated_at`| `string`| The timestamp when this instance was last updated.  
 `needs_evidence`| `bool`| Whether this verification requires evidence from the user.  
-  
+
 ### In JSON format
 
 verification_object.json
-    
-    
+
     {
       "id": 1,
       "type": "acceptable_use_violation",

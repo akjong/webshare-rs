@@ -6,7 +6,7 @@ Replaced Proxy
 
 List of replaced proxies which can be filtered by proxy replacement or the proxy list. You can add a query-string parameter `plan_id` in case you want to target a specific plan otherwise it will use the default plan.
 
-### Replaced proxy object
+## Replaced proxy object
 
 Parameter| Type| Description  
 ---|---|---  
@@ -19,7 +19,7 @@ Parameter| Type| Description
 `replaced_with_port`| `integer`| The port of the new proxy.  
 `replaced_with_country_code`| `string`| Country code in [ISO-3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format.  
 `created_at`| `string`| The timestamp of when this instance was created.  
-  
+
 ### Replacement reasons
 
 Reason| Type| Description  
@@ -31,12 +31,11 @@ Reason| Type| Description
 `auto_low_country_confidence`| `string`| Proxy was auto-replaced due to country code change. This automated action can be turned off via the [Proxy Config API](/proxy-config).  
 `auto_deleted`| `string`| The proxy was deleted from the system. This is an automated action and cannot be turned off.  
 `auto_site_check`| `string`| The proxy does not pass the site checks any longer. This automated action can be turned off via the [Proxy Config API](/proxy-config).  
-  
+
 ### In JSON format
 
 replaced_proxy_object_schema.json
-    
-    
+
     {
       "id": 93892,
       "reason": "proxy_replaced",

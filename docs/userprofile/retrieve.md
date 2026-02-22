@@ -7,29 +7,27 @@ Retrieve user profile
 This endpoint retrieves the user profile.
 
 ### Request & Response
-    
-    
+
+
     GET https://proxy.webshare.io/api/v2/profile/
 
 PythonJavascriptcURL
 
 get_profile.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
       "https://proxy.webshare.io/api/v2/profile/",
       headers={"Authorization": "Token APIKEY"}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     // Example Response
     {
       "id": 1,

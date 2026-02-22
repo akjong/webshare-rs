@@ -1,35 +1,33 @@
 [User Profile](/userprofile)
 
-Retrive user preferences
+Retrieve user preferences
 
 ## Retrieve user preferences
 
 This endpoint retrieves the user preferences.
 
 ### Request & Response
-    
-    
+
+
     GET https://proxy.webshare.io/api/v2/profile/preferences/
 
 PythonJavascriptcURL
 
 get_profile_preferences.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
       "https://proxy.webshare.io/api/v2/profile/preferences/",
       headers={"Authorization": "Token APIKEY"}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     // Example Response
     {
       "id": 1,

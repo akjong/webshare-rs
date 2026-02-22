@@ -6,29 +6,27 @@ List IP authorizations
 
 This endpoint returns the proxy IP authorizations in [paginated](/#pagination) format. You can add a query-string parameter `plan_id` in case you want to target a specific plan otherwise it will use the default plan.
 
-### Parameters
+## Parameters
 
 Parameter| Type| Description  
 ---|---|---  
 `ID`| `string`| The ID of the IP authorization to delete.  
-  
+
 ### Request & Response
-    
-    
+
+
     GET https://proxy.webshare.io/api/v2/proxy/ipauthorization/
 
 or in case of targeting a specific plan
-    
-    
+
     GET https://proxy.webshare.io/api/v2/proxy/ipauthorization/?plan_id=<Plan ID>
 
 PythonJavascriptcURL
 
 list_ip_authorization.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
         "https://proxy.webshare.io/api/v2/proxy/ipauthorization/",
         headers={"Authorization": "Token APIKEY"}
@@ -38,8 +36,7 @@ list_ip_authorization.py
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "count": 1,
       "next": null,

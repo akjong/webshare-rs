@@ -6,41 +6,38 @@ Get sub-user
 
 This endpoint retrieves a specific user. You can add a query-string parameter `plan_id` in case you want to target a specific plan otherwise it will use the default plan.
 
-### URL Parameters
+## URL Parameters
 
 Parameter| Type| Description  
 ---|---|---  
 `ID`| `int`| The ID of the user to retrieve  
-  
+
 ### Request & Response
-    
-    
+
+
     GET https://proxy.webshare.io/api/v2/subuser/<ID>/
 
 or in case of targeting a specific plan
-    
-    
+
     GET https://proxy.webshare.io/api/v2/subuser/<ID>/?plan_id=<Plan ID>
 
 PythonJavascriptcURL
 
 example.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
       "https://proxy.webshare.io/api/v2/subuser/<ID>/",
       headers={"Authorization": "Token APIKEY"}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
        "id":7,
        "label":"Test User",

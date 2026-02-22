@@ -4,9 +4,9 @@ List questions
 
 # List questions
 
-This endpoint returns the questions submited by compliance team in [paginated](/#pagination) format.
+This endpoint returns the questions submitted by compliance team in [paginated](/#pagination) format.
 
-### Parameters
+## Parameters
 
 Parameter| Type| Description  
 ---|---|---  
@@ -17,16 +17,15 @@ Parameter| Type| Description
 `flow__started_at__lte`| `string`| The [timestamp](https://en.wikipedia.org/wiki/ISO_8601) of the verification flow's start date will be less than this.  
 `question`| `string`| Match only question objects with the given question.  
 `answer__answer`| `boolean`| Match only question objects with the given answer.  
-  
+
 ### Examples
 
 PythonJavascriptcURL
 
 list-questions.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
         "https://proxy.webshare.io/api/v2/verification/question/",
         headers={"Authorization": "Token APIKEY"}
@@ -36,8 +35,7 @@ list-questions.py
 The commands above return JSON structured like this (If the question doesn't have an answer yet the answer field will come as null):
 
 response.json
-    
-    
+
     {
       "count": 1,
       "next": null,

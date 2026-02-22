@@ -8,7 +8,7 @@ This endpoint returns the limits/options available to customize for a plan. This
 
 Make sure the GET parameters are also URL encoded (as required by the HTTP standards).
 
-### Parameters
+## Parameters
 
 Parameter| Type| Description  
 ---|---|---  
@@ -16,25 +16,23 @@ Parameter| Type| Description
 `proxy_subtype`| `string`| Sub category of the proxies. Options are `default`, `premium`, `isp`, `residential` and `datacenter_and_isp`. Not all proxy types have the same sub types.  
 `proxy_countries`| `object`| Number of proxies from each [country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). `ZZ` means country is randomly allocated. Other customizations are based on this field.  
 `required_site_checks`| `list`| List of site checks the proxy list has to work with. E.g. `google_search` means that the proxies will work with Google search.  
-  
+
 ### Request & Response
-    
-    
+
+
     GET https://proxy.webshare.io/api/v2/subscription/customize/?query={json_encoded}
 
 or in case of targeting a specific plan
-    
-    
+
     GET https://proxy.webshare.io/api/v2/subscription/customize/?query={json_encoded}&plan_id=<Plan ID>
 
 PythonJavascriptcURL
 
 customize_options.py
-    
-    
+
     import requests
     import json
-     
+
     response = requests.get(
         "https://proxy.webshare.io/api/v2/subscription/customize/",
         {
@@ -48,14 +46,13 @@ customize_options.py
         },
         headers={"Authorization": "Token APIKEY"}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "proxy_type": "shared",
       "proxy_subtype": "default",

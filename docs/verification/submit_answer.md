@@ -6,23 +6,22 @@ Submit an answer
 
 This endpoint lets you submit an answer for a verification question with attachments. The encoding for this API must be `multipart/form-data`.
 
-### Parameters
+## Parameters
 
 Parameter| Type| Description  
 ---|---|---  
 `Question ID`| `string`| The ID of the question to submit an answer to, this parameter should be a route parameter included in the URL.  
 `answer`| `string`| The payload for this endpoint will be a JSON with property 'answer' which is the answer to the question.  
 `files`| `array`| Array of attachments you want to submit with the answer, the attachments are optional.  
-  
+
 ### Examples
 
 PythoncURL
 
 submit-answer.py
-    
-    
+
     import requests
-     
+
     response = requests.post(
         "https://proxy.webshare.io/api/v2/verification/question/<Question ID>/answer/",
         data={
@@ -36,8 +35,7 @@ submit-answer.py
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
         "id": 1,
         "answer": "The answer submitted by the user",

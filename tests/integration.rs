@@ -15,6 +15,7 @@
 use std::env;
 
 use webshare_rs::{
+    WebshareClient,
     models::{
         api_key::{CreateApiKeyRequest, UpdateApiKeyRequest},
         billing::UpdateBillingInfoRequest,
@@ -24,7 +25,6 @@ use webshare_rs::{
         proxy_stats::{ListActivitiesParams, ListStatsParams},
         verification::ListQuestionsParams,
     },
-    WebshareClient,
 };
 
 /// Build an authenticated client from the environment variable.

@@ -6,24 +6,23 @@ Dismiss a notification
 
 This endpoint lets you dismiss a notification.
 
-### Parameters
+## Parameters
 
 Parameter| Type| Description  
 ---|---|---  
 `ID`| `string`| The ID of the notification to dismiss.  
-  
+
 ### Request & Response
-    
-    
+
+
     GET https://proxy.webshare.io/api/v2/notification/<ID>/dismiss/
 
 PythonJavascriptcURL
 
 dismiss_notification.py
-    
-    
+
     import requests
-     
+
     response = requests.post(
         "https://proxy.webshare.io/api/v2/notification/<ID>/dismiss/",
         headers={"Authorization": "Token APIKEY"}
@@ -33,8 +32,7 @@ dismiss_notification.py
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
         "id": 13,
         "type": "too_much_bandwidth_too_little_proxies",

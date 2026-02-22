@@ -28,10 +28,10 @@ Attributes| Type| Description
 `proxy_port`| `number`| The source port used to connect to the target site. May be `null`.  
 `listen_address`| `string`| The IP address of the proxy server you have connected to. If you have used the Direct Connection mode, this field will be equal  
 `listen_port`| `number`| The port of the proxy server you have connected to.  
-  
+
 ## In JSON format
-    
-    
+
+
     {
       "timestamp": "2022-08-16T15:29:42.517523-07:00",
       "protocol": "http",

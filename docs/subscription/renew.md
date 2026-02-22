@@ -11,21 +11,20 @@ Attributes| Type| Description
 `payment_method`| `int`| The payment method to use. Can be `null` to use the payment on file, or an existing payment method id.  
 `term`| `string`| The term to renew. Can be `yearly` or `monthly`.  
 `recaptcha`| `string`| The recaptcha token (can be invisible recaptcha). Optional: Only required if a payment is required. If using account credits, no recaptcha is required.  
-  
+
 This API endpoint requires recaptcha validation if a payment is required. If you have enough account credits, no payment is required. When a payment is required you should not be using this API endpoint programmatically and only use it from the Webshare Dashboard.
 
-### Request & Response
-    
-    
+## Request & Response
+
+
     POST https://proxy.webshare.io/api/v2/subscription/checkout/renew/
 
 PythonJavascriptcURL
 
 list_ip_authorization.py
-    
-    
+
     import requests
-     
+
     response = requests.post(
         "https://proxy.webshare.io/api/v2/subscription/checkout/renew/",
         json={
@@ -35,18 +34,17 @@ list_ip_authorization.py
         },
         headers={"Authorization": "Token APIKEY"},
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "payment_required": true,
       "plan": 2,
-     
+
       "pending_payment": 3,
       "stripe_client_secret": "...",
       "stripe_payment_intent": "...",

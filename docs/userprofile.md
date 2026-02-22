@@ -4,7 +4,7 @@ User Profile
 
 You can use the API to retrieve information about your user preferences.
 
-### User profile object
+## User profile object
 
 Attributes| Type| Description  
 ---|---|---  
@@ -22,12 +22,11 @@ Attributes| Type| Description
 `subscribed_guides_and_tips`| `boolean`| Subscribed to email notifications for guides and tips for your proxy usage.  
 `subscribed_survey_emails`| `boolean`| Subscribed to email notifications for surveys.  
 `tracking_id`| `string`| Unique ID for this user. May be used while identifying the user with external services.  
-  
+
 ### In JSON format
 
 profile.json
-    
-    
+
     {
       "id": 1,
       "email": "user@webshare.io",

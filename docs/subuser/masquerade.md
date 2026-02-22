@@ -6,12 +6,12 @@ Masquerade as a sub-user
 
 Add the `X-Subuser` header to your API calls to retrieve data as that particular sub-user.
 
-### URL parameters
+## URL parameters
 
 Parameter| Type| Description  
 ---|---|---  
 `Subuser ID`| `int`| The ID of the subuser you wish to masquerade as  
-  
+
 ### Request & Response
 
 Add `X-Subuser` to any of the following APIs [Proxy Configuration](/subuser/masquerade#proxy-configuration), [Proxy List](/subuser/masquerade#proxy-list) and [Proxy Stats](/subuser/masquerade#proxy-stats)
@@ -19,10 +19,9 @@ Add `X-Subuser` to any of the following APIs [Proxy Configuration](/subuser/masq
 PythonJavascriptcURL
 
 example.py
-    
-    
+
     import requests
-     
+
     response = requests.get("https://proxy.webshare.io/api/v2/proxy/config/", headers={
         "Authorization": "Token APIKEY",
         "X-Subuser": "<User ID>"
@@ -32,8 +31,7 @@ example.py
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "id": 1,
       "state": "completed",

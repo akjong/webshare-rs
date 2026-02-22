@@ -11,19 +11,18 @@ To get the first API key, you should visit the [API Keys (opens in a new tab)](h
 Attributes| Type| Description  
 ---|---|---  
 `label`| `string`| The label to assign to this API key. May be duplicate with other labels.  
-  
-### Request & Response
-    
-    
+
+## Request & Response
+
+
     POST https://proxy.webshare.io/api/v2/apikey/
 
 PythonJavascriptcURL
 
 example.py
-    
-    
+
     import requests
-     
+
     response = requests.post(
         "https://proxy.webshare.io/api/v2/apikey/",
         json={"label": "server1 key"},
@@ -33,8 +32,7 @@ example.py
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "id": 1337,
       "key": "abc1234...zzz",

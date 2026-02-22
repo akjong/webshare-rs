@@ -13,17 +13,16 @@ When you complete a verification successfully, the state will become `processing
 The complete verification request may contain an empty body (or empty JSON object).
 
 ### Request & Response
-    
-    
+
+
     POST https://proxy.webshare.io/api/v2/idverification/complete/
 
 PythonJavascriptcURL
 
 example.py
-    
-    
+
     import requests
-     
+
     response = requests.post(
       "https://proxy.webshare.io/api/v2/idverification/complete/",
       json={}
@@ -33,8 +32,7 @@ example.py
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "id": 1,
       "state": "processing",

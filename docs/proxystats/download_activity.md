@@ -7,16 +7,14 @@ Download proxy activities
 This API does not require authentication.
 
 You can download the proxy activities list as a file using the link below. This link use a token that can be retrieved from the [Get Download Token](/downloads/get_download_token) API with the scope "activity". You can add a query-string parameter `plan_id` in case you want to target a specific plan otherwise it will use the default plan.
-    
-    
+
     GET api/v2/proxy/activity/download/
 
 or in case of targeting a specific plan
-    
-    
+
     GET api/v2/proxy/activity/download/?plan_id=<Plan ID>
 
-### Parameters
+## Parameters
 
 Parameter| Type| Description  
 ---|---|---  
@@ -28,28 +26,26 @@ Parameter| Type| Description
 `starting_after`| `string`| You can pass the timestamp of the last proxy activity to retrieve the next page.  
 `bytes__gte`| `string`| Filter requests with bytes equal or greater than the given value.  
 `bytes__lte`| `string`| Filter requests with bytes equal or less than the given value.  
-  
+
 ### Request & Response
 
 PythonJavascriptcURL
 
 download_activity_list.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
       "api/v2/proxy/activity/download/",
       { "download_token": DOWNLOAD_TOKEN }
     )
-     
+
     response.text
 
 The commands above return CSV file in the following format:
 
 response
-    
-    
+
     Time,Hostname,Destination Port,Bytes,Duration,Proxy,Your IP Address,Error Reason,Protocol
     2023-10-16 23:38:51.384785-07:00,test.dev.webshare.io,443,102400,0.3,178.62.198.117,10.1.0.1,None,http
     2023-10-16 22:38:51.354124-07:00,test.dev.webshare.io,443,153600,0.3,138.201.46.150,10.1.0.1,None,http

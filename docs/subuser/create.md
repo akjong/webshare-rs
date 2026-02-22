@@ -6,23 +6,21 @@ Create sub-user
 
 Create a new user by setting label and bandwidth limit. You can add a query-string parameter `plan_id` in case you want to target a specific plan otherwise it will use the default plan.
 
-### Request & Response
-    
-    
+## Request & Response
+
+
     POST https://proxy.webshare.io/api/v2/subuser/
 
 or in case of targeting a specific plan
-    
-    
+
     POST https://proxy.webshare.io/api/v2/subuser/?plan_id=<Plan ID>
 
 PythonJavascriptcURL
 
 example.py
-    
-    
+
     import requests
-     
+
     response = requests.post(
         "https://proxy.webshare.io/api/v2/subuser/",
         json={"label":"newcustomer", "proxy_limit": 10, "max_thread_count":500},
@@ -33,8 +31,7 @@ example.py
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
        "id":7,
        "label":"newcustomer",

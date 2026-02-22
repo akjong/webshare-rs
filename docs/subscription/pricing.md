@@ -8,7 +8,7 @@ This endpoint returns the pricing for a custom plan. This endpoint JSON encodes 
 
 Make sure the GET parameters are also URL encoded (as required by the HTTP standards).
 
-### Parameters
+## Parameters
 
 JSON encode all the parameters below into the `query` GET query.
 
@@ -30,25 +30,23 @@ Parameter| Type| Description
 `required_site_checks`| `array`| List of required site checks so proxies won’t be blocked on these websites.  
 `required_site_checks`| `array`| List of required site checks so proxies won’t be blocked on these websites.  
 `with_tax`| `boolean`| Include tax information (Optional, default false)  
-  
+
 ### Request & Response
-    
-    
+
+
     GET https://proxy.webshare.io/api/v2/subscription/pricing/?query={json_encoded}
 
 or in case of targeting a specific plan
-    
-    
+
     GET https://proxy.webshare.io/api/v2/subscription/pricing/?query={json_encoded}&plan_id=<Plan ID>
 
 PythonJavascriptcURL
 
 get_pricing.py
-    
-    
+
     import requests
     import json
-     
+
     response = requests.get(
         "https://proxy.webshare.io/api/v2/subscription/pricing/",
         {
@@ -72,14 +70,13 @@ get_pricing.py
         },
         headers={"Authorization": "Token APIKEY"}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
         "discount_percentage": 10,
         "non_discounted_price": 15.49,
@@ -203,5 +200,5 @@ Attributes| Type| Description
 `bandwidth_discount_tiers`| `list`| List of per_gb_price. From is exclusive; to is inclusive. E.g. 250 GB has price $0.0149, 251 GB has price $0.0068. If `to` is set to `null`, include up to infinity.  
 `features`| `list`| List of features and their prices.  
 `tax_breakdown`| `list`| List of tax entries if with_tax was true  
-  
+
 [Customization options](/subscription/customize "Customization options")[Purchase a plan](/subscription/purchase_plan "Purchase a plan")

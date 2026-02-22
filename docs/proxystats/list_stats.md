@@ -8,30 +8,28 @@ List the proxy stats within a time period. The stats are a aggregated hourly. Ho
 
 This API endpoint _is not_ paginated.
 
-### Parameters
+## Parameters
 
 Parameter| Type| Description  
 ---|---|---  
 `timestamp__lte`| `string`| The [timestamp](https://en.wikipedia.org/wiki/ISO_8601) of the stats will be less than this. If given a date in the future, projected stats will be included for each hour between now and the given date. Cannot be after the `subscription.end_date`. Default is `subscription.end_date`.  
 `timestamp__gte`| `string`| The [timestamp](https://en.wikipedia.org/wiki/ISO_8601) of the stats will be greater than this. Must be before the `timestamp__lte` field. Cannot be older than 90 days from today. Default is `subscription.start_date`.  
-  
+
 ### Request & Response
-    
-    
+
+
     GET https://proxy.webshare.io/api/v2/stats/
 
 or in case of targeting a specific plan
-    
-    
+
     GET https://proxy.webshare.io/api/v2/stats/?plan_id=<Plan ID>
 
 PythonJavascriptcURL
 
 list_stats.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
         "https://proxy.webshare.io/api/v2/stats/", {
           "timestamp__lte":"2022-09-09T23:34:00.095501-07:00",
@@ -44,8 +42,7 @@ list_stats.py
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     [
       {
         "timestamp": "2022-08-11T17:00:00-07:00",

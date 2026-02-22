@@ -6,30 +6,28 @@ Retrieve ID verification
 
 This endpoint retrieves the verification object.
 
-### Request & Response
-    
-    
+## Request & Response
+
+
     GET https://proxy.webshare.io/api/v2/idverification/
 
 PythonJavascriptcURL
 
 idverification.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
       "https://proxy.webshare.io/api/v2/idverification/",
       headers={"Authorization": "Token APIKEY"}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "id": 1,
       "state": "not-required",

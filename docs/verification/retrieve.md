@@ -6,24 +6,23 @@ Retrieve verification
 
 This endpoint lets you retrieve an account verification.
 
-### URL Parameters
+## URL Parameters
 
 Parameter| Type| Description  
 ---|---|---  
 `ID`| `integer`| The ID of the verification object.  
-  
+
 ### Examples
-    
-    
+
+
     GET https://proxy.webshare.io/api/v2/verification/flow/<ID>/
 
 PythoncURL
 
 verification-flow.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
         "https://proxy.webshare.io/api/v2/verification/flow/<ID>/",
         headers={"Authorization": "Token APIKEY"}
@@ -31,8 +30,7 @@ verification-flow.py
     response.json()
 
 response.json
-    
-    
+
     {
       "id": 1,
       "type": "acceptable_use_violation",

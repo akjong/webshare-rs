@@ -6,18 +6,17 @@ Update API key
 
 This endpoint updates an API key
 
-### Request & Response
-    
-    
+## Request & Response
+
+
     PATCH https://proxy.webshare.io/api/v2/apikey/<ID>/
 
 PythonJavascriptcURL
 
 example.py
-    
-    
+
     import requests
-     
+
     response = requests.patch(
         "https://proxy.webshare.io/api/v2/apikey/<ID>/",
         json={
@@ -25,14 +24,13 @@ example.py
         },
         headers={"Authorization": "Token APIKEY"}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "id": 1337,
       "key": "abc1234...zzz",

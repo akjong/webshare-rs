@@ -110,6 +110,7 @@ Complete rewrite of the `webshare-rs` SDK implementing all ~108 Webshare API end
 
 - [ ] **Step 1:** Delete old `src/rest.rs`, `src/apis/mod.rs`, `src/apis/proxy_list_api.rs`, `src/models/mod.rs`, `src/models/proxy_list.rs`.
 - [ ] **Step 2:** Rewrite `src/lib.rs`:
+
   ```rust
   //! Webshare API client for Rust
   //!
@@ -125,17 +126,18 @@ Complete rewrite of the `webshare-rs` SDK implementing all ~108 Webshare API end
   //!     Ok(())
   //! }
   //! ```
-  
+
   pub mod client;
   pub mod error;
   pub mod pagination;
   pub mod models;
   pub mod api;
-  
+
   pub use client::{WebshareClient, WebshareClientBuilder};
   pub use error::{WebshareError, Result};
   pub use pagination::PaginatedResponse;
   ```
+
 - [ ] **Step 3:** Create empty `src/models/mod.rs` and `src/api/mod.rs` with placeholder comments.
 - [ ] **Verification:** `cargo check` passes with no errors.
 
@@ -255,7 +257,7 @@ Complete rewrite of the `webshare-rs` SDK implementing all ~108 Webshare API end
   - `ProxyStat` (response): timestamp, is_projected, bandwidth_total/average, requests_total/successful/failed, error_reasons, countries_used, number_of_proxies_used, protocols_used, average_concurrency, average_rps, last_request_sent_at
   - `AggregateStats` (response): bandwidth_projected, bandwidth_total, bandwidth_average, requests fields, etc.
   - `ProxyActivity` (response): timestamp, protocol, durations, error fields, addresses, bytes, etc.
-  - `ListStatsParams`: timestamp__lte, timestamp__gte, plan_id
+  - `ListStatsParams`: timestamp**lte, timestamp**gte, plan_id
   - `ListActivitiesParams`: all filter params + starting_after
   - `DownloadActivitiesParams`: download_token, timestamp filters, etc.
 - [ ] **Step 2:** Create `src/api/proxy_stats.rs`:

@@ -6,7 +6,7 @@ List proxies
 
 This endpoint returns the proxy list in [paginated](/#pagination) format. The `mode` parameter must always be specified. You can add a query-string parameter `plan_id` in case you want to target a specific plan otherwise it will use the default plan.
 
-### Parameters
+## Parameters
 
 Parameter| Type| Description  
 ---|---|---  
@@ -20,28 +20,26 @@ Parameter| Type| Description
 `valid`| `boolean`| Filter by the validity of the proxy address. valid filter does not work in `backbone` mode. Optional field.  
 `asn_number`| `string`| Filter by the the proxy address ASN number. asn_number filter does not work in `backbone` mode. Optional field.  
 `asn_name`| `string`| Filter by the the proxy address ASN name. asn_name filter does not work in `backbone` mode. Optional field.  
-  
+
 ### Request & Response
 
 PythonJavascriptcURL
 
 list_proxies.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
         "https://proxy.webshare.io/api/v2/proxy/list/?mode=direct&page=1&page_size=25",
         headers={"Authorization": "Token APIKEY"}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "count": 10,
       "next": null,

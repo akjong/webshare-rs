@@ -74,7 +74,7 @@
 
 ### 3.1 System Context
 
-```
+```text
 ┌─────────────────────────────────────────────────┐
 │                  webshare-rs (SDK)               │
 │                                                   │
@@ -103,6 +103,7 @@
 ```
 
 The SDK is a Rust library crate (`src/`) that consumers add as a dependency. It exposes:
+
 - `WebshareClient` — the main entry point, holds `hpx::Client` and auth config.
 - Per-domain API methods directly on `WebshareClient` (e.g., `client.list_api_keys()`, `client.get_proxy_list()`).
 - Typed request/response models in `src/models/`.
@@ -133,7 +134,7 @@ The SDK is a Rust library crate (`src/`) that consumers add as a dependency. It 
 
 ### 4.1 Module Structure
 
-```
+```text
 src/
 ├── lib.rs                    # Public API re-exports, crate docs
 ├── client.rs                 # WebshareClient struct + builder
@@ -323,7 +324,7 @@ pub async fn get_referral_code_info(referral_code: &str) -> Result<ReferralCodeI
 
 #### Request Flow
 
-```
+```text
 User calls client.list_api_keys(page, page_size)
   → Build URL: "{base_url}/api/v2/apikey/"
   → Add query params (page, page_size) if Some

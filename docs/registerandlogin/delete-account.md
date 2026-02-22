@@ -11,15 +11,14 @@ This endpoint deletes your Webshare account.
 ## Delete Account Request
 
 This API endpoint requires a recaptcha validation. This means that you should not be using this API endpoint programmatically and only use it from the Webshare Dashboard.
-    
-    
+
     POST https://proxy.webshare.io/api/v2/deleteaccount/
 
 Parameter| Type| Description  
 ---|---|---  
 `password`| `string`| Password of the user.  
 `recaptcha`| `string`| The recaptcha token (can be invisible recaptcha).  
-  
+
 If request is successful, the API deletes the user. A successful request returns 204 response
 
 ### Request & Response
@@ -27,10 +26,9 @@ If request is successful, the API deletes the user. A successful request returns
 PythonJavascriptcURL
 
 delete_account.py
-    
-    
+
     import requests
-     
+
     response = requests.post(
     "https://proxy.webshare.io/api/v2/deleteaccount/",
     json={
@@ -40,20 +38,17 @@ delete_account.py
     headers={"Authorization": "Token APIKEY"}
     )
     assert response.status_code == 204
-     
 
 the above command returns empty response with `204 No Content`
-    
-    
+
     HTTP/1.1 204 No Content
 
 ### Account deleted
 
 If your account is deleted, all API requests will start returning the `403 Forbidden` status with the following error message.
-    
-    
+
     HTTP/1.1 403 Forbidden
-     
+
     {
       "detail": "Your account is deleted.",
       "code": "account_deleted"

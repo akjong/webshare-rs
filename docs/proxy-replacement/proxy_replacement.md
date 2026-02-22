@@ -8,7 +8,7 @@ Set of rules indicating which proxies to replace from and replace with in a prox
 
 # The proxy replacement object
 
-### Parameters
+## Parameters
 
 Attributes| Type| Description  
 ---|---|---  
@@ -25,7 +25,7 @@ Attributes| Type| Description
 `created_at`| `string`| The timestamp of when this instance was created.  
 `dry_run_completed_at`| `string`| The timestamp of when this instance state became `validated`. May be `null`.  
 `completed_at`| `string`| The timestamp of when this instance state became `completed`. May be `null`.  
-  
+
 ### Replacement reasons
 
 Reason| Type| Description  
@@ -36,12 +36,11 @@ Reason| Type| Description
 `auto_out_of_rotation`| `string`| Proxy was auto-replaced due to moving out of rotation by Webshare admins. This usually indicates that the proxy is not performing at 100%. This automated action can be turned off via the [Proxy Config API](/proxy-config).  
 `auto_low_country_confidence`| `string`| Proxy was auto-replaced due to country code change. This automated action can be turned off via the [Proxy Config API](/proxy-config).  
 `auto_deleted`| `string`| The proxy was deleted from the system. This is an automated action and cannot be turned off.  
-  
+
 ### In JSON Format
 
 replacement_object.json
-    
-    
+
     {
         "id": 98315,
         "to_replace": {"type": "ip_range", "ip_ranges": ["1.2.3.0/24"]},
@@ -63,11 +62,10 @@ replacement_object.json
 There are 3 types of value for `to_replace` | `replace_with` fields. a `replace_with` may be a list of dictionaries/types as we may not have enough replacements from one country.
 
 For example, if we want to replace 10 US proxies with 5 French and 5 Turkish, you can use the fields as follows:
-    
-    
+
     ## To Replace
     to_replace: { type: "country", country_code: "US", count: 10 }
-     
+
     ## Replace with
     replace_with: [
         { type: "country", country_code: "FR", count: 5 },
@@ -75,8 +73,8 @@ For example, if we want to replace 10 US proxies with 5 French and 5 Turkish, yo
     ]
 
 ### Type: IP range
-    
-    
+
+
     type=ip_range
 
 Attributes| Type| Description  
@@ -84,10 +82,10 @@ Attributes| Type| Description
 `type`| `string`| Set to `ip_range`. Indicates which proxy IP addresses to replace or replace with.  
 `ip_ranges`| `list`| List of IP ranges in [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing), e.g. 10.0.0.0/8. Host bits may not be set. For example, 10.0.0.1/24 is invalid. However, 10.0.0.0/24 is valid.  
 `count`| `number`| Number of proxies to replace with.  
-  
+
 ### Type: IP address
-    
-    
+
+
     type=ip_address
 
 Attributes| Type| Description  
@@ -95,10 +93,10 @@ Attributes| Type| Description
 `type`| `string`| Set to `ip_address`. Indicates which proxy IP addresses to replace. Cannot be used with `replace_with` field.  
 `ip_addresses`| `list`| List of IP addresses (without the CIDR notation). For example ['1.0.0.1', '1.0.0.2'].  
 `count`| `number`| Number of proxies to replace.  
-  
+
 ### Type: ASN
-    
-    
+
+
     type=asn
 
 Attributes| Type| Description  
@@ -106,10 +104,10 @@ Attributes| Type| Description
 `type`| `string`| Set to `asn`. Indicates which proxy ASN number to replace.  
 `asn_numbers`| `list`| List of ASN numbers (strings). For example ['7631', '11964'].  
 `count`| `number`| Number of proxies to replace.  
-  
+
 ### Type: Country
-    
-    
+
+
     type=country
 
 Attributes| Type| Description  
@@ -117,15 +115,15 @@ Attributes| Type| Description
 `type`| `string`| Set to `country`. Indicates which proxy countries to replace or replace with.  
 `country_code`| `string`| Country code in [ISO-3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format.  
 `count`| `number`| Number of proxies to replace with.  
-  
+
 ### Type: Any
-    
-    
+
+
     type=any
 
 Attributes| Type| Description  
 ---|---|---  
 `type`| `string`| Set to `any`. Only used in the `replace_with` field.  
 `count`| `number`| Number of proxies to replace with.  
-  
+
 [Proxy Replacement](/proxy-replacement "Proxy Replacement")[List replacement](/proxy-replacement/proxy_replacement/proxy_replacement_list "List replacement")

@@ -10,7 +10,7 @@ Plan
 
 Subscription stays with the user even after a user switches to a new Plan. Whereas, a new Plan object is created each time a customer re-customizes their Plan.
 
-Plan object holds information about the customization options for the plan   
+Plan object holds information about the customization options for the plan
 e.g. plan type, monthly price, proxy locations.
 
 [See the Subscription API](/subscription).
@@ -44,10 +44,10 @@ Attributes| Type| Description
 `is_high_priority_network`| `boolean`| Indicates whether this plan has high priority network.  
 `created_at`| `string`| The timestamp when this instance was created.  
 `updated_at`| `string`| The timestamp when this instance was last updated.  
-  
+
 ### In JSON format
-    
-    
+
+
     {
       "id": 2,
       "status": "active",
@@ -81,8 +81,7 @@ Attributes| Type| Description
 ## List plans
 
 This endpoint retrieves all plans created by the user (even the non-active ones) in [paginated](/#pagination) format with [filtering & ordering](/#filtering-amp-ordering) enabled.
-    
-    
+
     GET https://proxy.webshare.io/api/v2/subscription/plan/
 
 ### Request & Response
@@ -90,22 +89,20 @@ This endpoint retrieves all plans created by the user (even the non-active ones)
 PythonJavascriptcURL
 
 list_plans.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
       "https://proxy.webshare.io/api/v2/subscription/plan/",
       headers={"Authorization": "Token APIKEY"}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
        "count":1,
        "next":null,
@@ -148,17 +145,16 @@ response.json
 This endpoint lets you update an existing plan. You can only update the `automatic_refresh_next_at` field of the Plan object.
 
 ### Request & Response
-    
-    
+
+
     PATCH https://proxy.webshare.io/api/v2/subscription/plan/<ID>/
 
 PythonJavascriptcURL
 
 update_plan.py
-    
-    
+
     import requests
-     
+
     response = requests.patch(
         "https://proxy.webshare.io/api/v2/subscription/plan/<ID>/",
         json={
@@ -166,14 +162,13 @@ update_plan.py
         },
         headers={"Authorization": "Token APIKEY"}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "id": 2,
       "status": "active",
@@ -213,31 +208,29 @@ This endpoint returns the plan. You can find the active plan id from the subscri
 Parameter| Type| Description  
 ---|---|---  
 `ID`| `int`| The ID of the plan to retrieve  
-  
+
 ### Request & Response
-    
-    
+
+
     GET https://proxy.webshare.io/api/v2/subscription/plan/<ID>/
 
 PythonJavascriptcURL
 
 retrieve_plan.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
         "https://proxy.webshare.io/api/v2/subscription/plan/<ID>/",
         headers={"Authorization": "Token APIKEY"}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "id": 2,
       "status": "active",
@@ -284,7 +277,7 @@ Parameter| Type| Description
 ---|---|---  
 `payment_method`| `string`| Can be 3 unique options. 1) `null`, use the payment on file (same as `subscription.payment_method`). 2) Use an existing PaymentMethod id. 3) Add a new payment by using [Stripe PaymentMethod](https://stripe.com/docs/js/payment_methods) ID (usually starts with "pm_...").  
 `recaptcha`| `string`| The recaptcha token (can be invisible recaptcha).  
-  
+
 ### Response fields
 
 Attributes| Type| Description  
@@ -295,19 +288,18 @@ Attributes| Type| Description
 `stripe_client_secret`| `string`| The `client_secret` for the Stripe [PaymentIntent](https://stripe.com/docs/js/payment_intents/confirm_card_payment). Only present if `payment_required == true`.  
 `stripe_payment_intent`| `string`| The ID of the Stripe [PaymentIntent](https://stripe.com/docs/js/payment_intents/confirm_card_payment). Only present if `payment_required == true`.  
 `stripe_payment_method`| `string`| The ID of the Stripe [PaymentMethod](https://stripe.com/docs/js/payment_methods/create_payment_method). Only present if `payment_required == true`.  
-  
+
 ### Request & Response
-    
-    
+
+
     POST https://proxy.webshare.io/api/v2/subscription/plan/<ID>/upgrade/
 
 PythonJavascript
 
 upgrade_plan.py
-    
-    
+
     import requests
-     
+
     response = requests.post(
         "https://proxy.webshare.io/api/v2/subscription/plan/<ID>/upgrade/",
         json={
@@ -328,14 +320,13 @@ upgrade_plan.py
         },
         headers={"Authorization": "Token APIKEY"}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "payment_required": true,
       "plan": 2,
@@ -350,30 +341,28 @@ response.json
 This endpoint lets you cancel an existing plan. Your subscription will be credits according to the duration/bandwidth left in that plan.
 
 ### Request & Response
-    
-    
+
+
     POST https://proxy.webshare.io/api/v2/subscription/plan/<ID>/cancel/
 
 PythonJavascriptcURL
 
 cancel_plan.py
-    
-    
+
     import requests
-     
+
     response = requests.post(
         "https://proxy.webshare.io/api/v2/subscription/plan/<ID>/cancel/",
         json={},
         headers={"Authorization": "Token APIKEY"}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "success": true,
       "transaction": 12

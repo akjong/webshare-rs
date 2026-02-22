@@ -5,8 +5,7 @@ Update user profile
 ## Update user profile
 
 This endpoint updates the user profile.
-    
-    
+
     PATCH https://proxy.webshare.io/api/v2/profile/
 
 ### Request & Response
@@ -14,10 +13,9 @@ This endpoint updates the user profile.
 PythonJavascriptcURL
 
 patch_profile.py
-    
-    
+
     import requests
-     
+
     response = requests.patch(
         "https://proxy.webshare.io/api/v2/profile/",
         headers={"Authorization": "Token APIKEY"},
@@ -25,14 +23,13 @@ patch_profile.py
             "timezone":"America/New_York"
         },
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "id": 2,
       "email": "new@webshare.io",
@@ -43,4 +40,4 @@ response.json
       ...
     }
 
-[Retrieve user profile](/userprofile/retrieve "Retrieve user profile")[Retrive user preferences](/userprofile/retrivePreferences "Retrive user preferences")
+[Retrieve user profile](/userprofile/retrieve "Retrieve user profile")[Retrieve user preferences](/userprofile/retrievePreferences "Retrieve user preferences")

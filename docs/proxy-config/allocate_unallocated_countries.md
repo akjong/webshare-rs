@@ -5,24 +5,21 @@ Assign unallocated countries
 # Allocate unallocated countries
 
 This endpoint allocates the proxies in `unallocated_countries` state. If there are 5 unallocated countries, you must send `new_countries` with 5 countries in total. All `new_countries` must be valid and available. You can add a query-string parameter `plan_id` in case you want to target a specific plan otherwise it will use the default plan.
-    
-    
+
     POST https://proxy.webshare.io/api/v2/proxy/config/allocate_unallocated_countries/
 
 or in case of targeting a specific plan
-    
-    
+
     POST https://proxy.webshare.io/api/v2/proxy/config/allocate_unallocated_countries/?plan_id=<Plan ID>
 
-### Request & Response
+## Request & Response
 
 PythonJavaScriptcURL
 
 allocate_unallocated_countries.py
-    
-    
+
     import requests
-     
+
     response = requests.post(
         "https://proxy.webshare.io/api/v2/proxy/config/allocate_unallocated_countries/",
         headers={"Authorization": "Token APIKEY"},
@@ -32,14 +29,13 @@ allocate_unallocated_countries.py
             }
         },
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "id": 1,
       "state": "completed",
@@ -76,5 +72,5 @@ response.json
 Attributes| Description  
 ---|---  
 new_countries| Number of proxies by country_code:count. Country code must be upper case and count must be greater than 0.  
-  
+
 [Update proxy config](/proxy-config/update "Update proxy config")[IP Authorization](/ipauthorization "IP Authorization")

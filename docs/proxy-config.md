@@ -2,7 +2,7 @@ Proxy Configuration
 
 # Proxy Configuration
 
-### The proxy config object
+## The proxy config object
 
 You can use the API to retrieve information about your proxy configuration.
 
@@ -34,10 +34,10 @@ Attributes| Type| Description
 `is_proxy_used`| `boolean`| Indicates whether a proxy has been used.  
 `created_at`| `string`| The timestamp of when this instance was created.  
 `updated_at`| `string`| The timestamp when this instance was last updated.  
-  
+
 ### In JSON format
-    
-    
+
+
     {
       "id": 1,
       "state": "completed",

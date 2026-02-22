@@ -8,26 +8,25 @@ This endpoint updates the user preferences.
 
 ### Request & Response fields
 
-This API can be called with one or more parameters according to which parameters are intented to be updated.
+This API can be called with one or more parameters according to which parameters are intended to be updated.
 
 Parameter| Type| Description  
 ---|---|---  
-`customer_satisfaction_survey_last_dismissed_at`| `string`| The timestamp when the customer satisfication survey dissmissed.  
+`customer_satisfaction_survey_last_dismissed_at`| `string`| The timestamp when the customer satisfaction survey dismissed.  
 `customer_satisfaction_survey_last_completed_at`| `string`| The timestamp when the customer satisfication survey completed.  
 `onboarding_activity_page_viewed_at`| `string`| The timestamp when the onboarding activity page viewed.  
-  
+
 ### Request & Response
-    
-    
+
+
     PATCH https://proxy.webshare.io/api/v2/profile/preferences/
 
 PythonJavascriptcURL
 
 patch_profile_preferences.py
-    
-    
+
     import requests
-     
+
     response = requests.patch(
         "https://proxy.webshare.io/api/v2/profile/preferences/",
         headers={"Authorization": "Token APIKEY"},
@@ -35,14 +34,13 @@ patch_profile_preferences.py
             "customer_satisfaction_survey_last_dismissed_at": "2022-06-14T15:59:06.663774-07:00"
         },
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "id": 2,
       "customer_satisfaction_survey_last_dismissed_at": "2022-06-14T15:59:06.663774-07:00",
@@ -51,4 +49,4 @@ response.json
       ...
     }
 
-[Retrive user preferences](/userprofile/retrivePreferences "Retrive user preferences")[Notifications](/notifications "Notifications")
+[Retrieve user preferences](/userprofile/retrievePreferences "Retrieve user preferences")[Notifications](/notifications "Notifications")

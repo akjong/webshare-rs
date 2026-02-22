@@ -6,21 +6,20 @@ Submit an appeal
 
 This endpoint lets you submit an appeal for an account suspension. You can submit only one appeal at a time.
 
-### Parameters
+## Parameters
 
 Parameter| Type| Description  
 ---|---|---  
 `appeal`| `string`| The appeal you want to submit for an account suspension.  
-  
+
 ### Examples
 
 PythonJavascriptcURL
 
 submit-answer.py
-    
-    
+
     import requests
-     
+
     response = requests.post(
         "https://proxy.webshare.io/api/v2/verification/appeal/",
         data={
@@ -33,8 +32,7 @@ submit-answer.py
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
         "id": 1,
         "appeal": "The appeal for account suspension you want to submit",

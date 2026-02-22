@@ -6,24 +6,23 @@ Retrieve a notification
 
 This endpoint lets you retrieve a notification.
 
-### Parameters
+## Parameters
 
 Parameter| Type| Description  
 ---|---|---  
 `ID`| `string`| The ID of the notification to retrieve.  
-  
+
 ### Request & Response
-    
-    
+
+
     GET https://proxy.webshare.io/api/v2/notification/<ID>/
 
 PythonJavascriptcURL
 
 get_notification.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
         "https://proxy.webshare.io/api/v2/notification/<ID>/",
         headers={"Authorization": "Token APIKEY"}
@@ -33,8 +32,7 @@ get_notification.py
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
         "id": 13,
         "type": "too_much_bandwidth_too_little_proxies",

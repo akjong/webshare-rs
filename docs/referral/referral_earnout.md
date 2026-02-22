@@ -4,7 +4,7 @@ Earn out
 
 # Referral Earn out
 
-### The earn out object
+## The earn out object
 
 Whenever a user is rewarded credits/payouts from their pending balance (e.g. `ReferralConfig.credits_earned`), an earn out instance is created.
 
@@ -18,12 +18,11 @@ Attributes| Type| Description
 `error_reason`| `str`| If status is set to `failed`, show what the error is. Otherwise, set to `null`.  
 `created_at`| `str`| The timestamp of when this instance was created.  
 `updated_at`| `str`| The timestamp when this instance was last updated.  
-  
+
 ### In JSON format
 
 earnout.json
-    
-    
+
     {
       "id": 1,
       "mode": "credits",
@@ -40,17 +39,16 @@ earnout.json
 This endpoint returns the earn outs in [paginated](/#pagination) format.
 
 ### Request & Response
-    
-    
+
+
     GET https://proxy.webshare.io/api/v2/referral/earnout
 
 PythonJavascriptcURL
 
 example.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
         "https://proxy.webshare.io/api/v2/referral/earnout",
         headers={"Authorization": "Token APIKEY"}
@@ -60,8 +58,7 @@ example.py
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "count": 1,
       "next": null,
@@ -90,31 +87,29 @@ This endpoint lets you retrieve an earn out.
 Parameter| Type| Description  
 ---|---|---  
 `ID`| `int`| The ID of the earn out object to retrieve.  
-  
+
 ### Request & Response
-    
-    
+
+
     GET https://proxy.webshare.io/api/v2/referral/earnout/{ID}/
 
 PythonJavascriptcURL
 
 example.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
         "https://proxy.webshare.io/api/v2/referral/earnout/{ID}",
         headers={"Authorization": "Token APIKEY"}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "id": 1,
       "mode": "credits",

@@ -8,7 +8,7 @@ List the proxy activity within a time period.
 
 You can paginate this endpoint using the `starting_after` and `page_size` fields instead of the `page` field. You can pass the `timestamp` of the latest activity instance to the `starting_after` queryset to view the next page. You can add a query-string parameter `plan_id` in case you want to target a specific plan otherwise it will use the default plan.
 
-### Parameters
+## Parameters
 
 Parameter| Type| Description  
 ---|---|---  
@@ -20,24 +20,22 @@ Parameter| Type| Description
 `bytes__gte`| `string`| Filter requests with bytes equal or greater than the given value.  
 `bytes__lte`| `string`| Filter requests with bytes equal or less than the given value.  
 `verification_category`| `string`| The account verification category to filter with.  
-  
+
 ### Request & Response
-    
-    
+
+
     GET https://proxy.webshare.io/api/v2/proxy/activity/
 
 or in case of targeting a specific plan
-    
-    
+
     GET https://proxy.webshare.io/api/v2/proxy/activity/?plan_id=<Plan ID>
 
 PythonJavascriptcURL
 
 list_activity.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
         "https://proxy.webshare.io/api/v2/proxy/activity/", {
           "timestamp__lte":"2022-09-09T23:34:00.095501-07:00",
@@ -45,14 +43,13 @@ list_activity.py
         },
         headers={"Authorization": "Token APIKEY"}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "count": 10,
       "next": null,

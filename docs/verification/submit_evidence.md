@@ -5,10 +5,9 @@ Submit evidence
 ## Submit evidence
 
 This endpoint lets you submit evidence for a verification. The encoding for this API must be `multipart/form-data`. You cannot send JSON content to this API.
-    
-    
+
     import requests
-     
+
     response = requests.post(
         "https://proxy.webshare.io/api/v2/verification/flow/<ID>/submit_evidence/",
         data={"explanation": "We use proxies to scrape pricing information from e-commerce websites."},
@@ -16,15 +15,13 @@ This endpoint lets you submit evidence for a verification. The encoding for this
         headers={"Authorization": "Token APIKEY"}
     )
     response.json()
-    
-    
+
     curl "https://proxy.webshare.io/api/v2/verification/flow/<ID>/submit_evidence/" \
       -F "explanation=We+use+proxies+to+scrape+pricing+information+from+e-commerce+websites.&files=@evidence.jpg" \
       -H "Authorization: Token APIKEY"
 
 > The above command returns JSON structured like this:
-    
-    
+
     {
       "id": 1,
       "type": "acceptable_use_violation",
@@ -47,5 +44,5 @@ Parameter| Description
 ID| The ID of the verification object.  
 explanation| The explanation submitted as part of the verification.  
 files| List of files submitted as part of the verification.  
-  
+
 [Retrieve verification](/verification/retrieve "Retrieve verification")[Account suspended](/verification/suspended "Account suspended")

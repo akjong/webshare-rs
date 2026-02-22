@@ -16,22 +16,20 @@ Parameter| Type| Description
 `request_count`| `number`| Number of proxy requests sent matching this verification trigger.  
 `request_threshold`| `null`| Previously indicated the number of proxy requests which would trigger this threshold. Now always returns null.  
 `triggered`| `boolean`| Whether this verification threshold has been triggered.  
-  
+
 ### Examples
-    
-    
+
+
     import requests
-     
+
     response = requests.get("https://proxy.webshare.io/api/v2/verification/thresholds/")
     response.json()
-    
-    
+
     curl "https://proxy.webshare.io/api/v2/verification/thresholds/" \
       -H "Authorization: Token APIKEY"
 
 > The above command returns JSON structured like this:
-    
-    
+
     {
         "requests_to_authentication_pages": {
             "description": "Large number of requests to login/sign-up pages requires additional verification. Large number of login attempts with different credentials is strictly forbidden. Signing up for large number of accounts on some platforms may require ID verification.",

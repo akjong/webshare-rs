@@ -6,7 +6,7 @@
 //!
 //! ```rust,no_run
 //! # async fn example() -> webshare_rs::error::Result<()> {
-//! use webshare_rs::{models::proxy::ListProxiesParams, WebshareClient};
+//! use webshare_rs::{WebshareClient, models::proxy::ListProxiesParams};
 //!
 //! let client = WebshareClient::new("your-api-token");
 //! let proxies = client.list_proxies(&ListProxiesParams::default()).await?;

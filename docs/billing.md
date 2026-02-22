@@ -4,8 +4,8 @@ Payments & Billing
 
 Webshare has 2 main objects for managing payment & billing:
 
-  * [Payment Method](/billing#payment-method): The payment method used in the payment process.
-  * [Transaction](/billing#transaction): The transaction created when a payment is completed.
+* [Payment Method](/billing#payment-method): The payment method used in the payment process.
+* [Transaction](/billing#transaction): The transaction created when a payment is completed.
 
 
 
@@ -32,7 +32,7 @@ Attributes| Type| Description
 `postal_code`| `string`| Billing address postal code.  
 `state`| `string`| Billing address state.  
 `country`| `string`| Billing address country.  
-  
+
 #### Fields for `StripeCard`
 
 The fields below are available only when the PaymentMethod.type is `StripeCard`.
@@ -43,12 +43,11 @@ Attributes| Type| Description
 `last4`| `string`| Last 4 digits of the card.  
 `expiration_year`| `number`| Expiration year of the card.  
 `expiration_month`| `number`| Expiration month of the card. `6` means June.  
-  
+
 **In JSON format**
 
 stripe_card.json
-    
-    
+
     {
       "id": 1,
       "type": "StripeCard",
@@ -71,8 +70,7 @@ stripe_card.json
 Link payments do not have any additional fields.
 
 link_payment.json
-    
-    
+
     {
       "id": 1,
       "type": "LinkPayment",
@@ -99,12 +97,11 @@ Attributes| Type| Description
 `refund_date`| `string`| The date the last refund was issued. May be `null` if no refund was issued. If a user is refunded multiple times for the same transaction, only the last date will be shown.  
 `created_at`| `string`| The timestamp of when this instance was created.  
 `updated_at`| `string`| The timestamp when this instance was last updated.  
-  
+
 **In JSON format**
 
 transaction_object.json
-    
-    
+
     {
       "id": 1,
       "status": "completed",
@@ -145,12 +142,11 @@ Attributes| Type| Description
 `created_at`| `string`| The timestamp on when the pending payment was created  
 `updated_at`| `string`| The timestamp when the pending payment was last updated.  
 `completed_at`| `string`| The timestamp when the pending payment status was last updated.  
-  
+
 **In JSON format**
 
 pending_payment_object.json
-    
-    
+
     {
       "id": 1,
       "status": "pending",

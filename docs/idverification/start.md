@@ -11,8 +11,7 @@ When you start a verification successfully, the state will become `pending`.
 ### Start verification request
 
 The start verification request may contain an empty body (or empty JSON object).
-    
-    
+
     POST https://proxy.webshare.io/api/v2/idverification/start/
 
 ### Request & Response
@@ -20,22 +19,20 @@ The start verification request may contain an empty body (or empty JSON object).
 PythonJavascriptcURL
 
 example.py
-    
-    
+
     import requests
-     
+
     response = requests.post(
       "https://proxy.webshare.io/api/v2/idverification/start/",
       json={}
     )
-     
+
     response.json()
 
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "id": 1,
       "state": "pending",

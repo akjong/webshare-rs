@@ -6,24 +6,23 @@ Refresh proxy list of a sub-user
 
 Refresh the proxy list of a user. You can only perform this action if the user has a custom proxy list.
 
-### URL Parameters
+## URL Parameters
 
 Parameter| Type| Description  
 ---|---|---  
 `ID`| `int`| The ID of the user to refresh  
-  
+
 ### Request & Response
-    
-    
+
+
     GET https://proxy.webshare.io/api/v2/subuser/<ID>/refresh/
 
 PythonJavascriptcURL
 
 example.py
-    
-    
+
     import requests
-     
+
     response = requests.post(
         "https://proxy.webshare.io/api/v2/subuser/<ID>/refresh/",
         headers={"Authorization": "Token APIKEY"}
@@ -33,8 +32,7 @@ example.py
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
        "id":7,
        "label":"Test User",

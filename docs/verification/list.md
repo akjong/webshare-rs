@@ -6,15 +6,14 @@ List verifications
 
 This endpoint returns the account verifications in [paginated](/#pagination) format.
 
-### Examples
+## Examples
 
 PythoncURL
 
 list-verifications.py
-    
-    
+
     import requests
-     
+
     response = requests.get(
         "https://proxy.webshare.io/api/v2/verification/flow/",
         headers={"Authorization": "Token APIKEY"}
@@ -24,8 +23,7 @@ list-verifications.py
 The commands above return JSON structured like this:
 
 response.json
-    
-    
+
     {
       "count": 1,
       "next": null,
