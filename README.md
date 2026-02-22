@@ -172,4 +172,4 @@ See [GitHub releases](https://github.com/akjong/webshare-rs/releases) for the fu
 
 ## License
 
-Licensed under the [MIT License](LICENSE).
+Licensed under the [Apache-2.0 License](LICENSE).
