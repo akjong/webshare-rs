@@ -2,12 +2,11 @@
 name = "webshare-rs"
 version = "0.1.0"
 edition = "2024"
-rust-version = "1.85"
 description = "Rust SDK for the Webshare proxy API — ergonomic typed client covering all 100+ endpoints"
 repository = "https://github.com/akjong/webshare-rs"
 homepage = "https://github.com/akjong/webshare-rs"
 documentation = "https://docs.rs/webshare-rs"
-license = "MIT"
+license = "Apache-2.0"
 readme = "README.md"
 keywords = ["webshare", "proxy", "api", "sdk", "http"]
 categories = ["api-bindings", "network-programming", "web-programming::http-client"]

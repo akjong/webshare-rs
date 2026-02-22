@@ -2,8 +2,6 @@
 
 [![crates.io](https://img.shields.io/crates/v/webshare-rs.svg)](https://crates.io/crates/webshare-rs)
 [![docs.rs](https://docs.rs/webshare-rs/badge.svg)](https://docs.rs/webshare-rs)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![CI](https://github.com/akjong/webshare-rs/actions/workflows/release.yml/badge.svg)](https://github.com/akjong/webshare-rs/actions/workflows/release.yml)
 
 An ergonomic, fully-typed Rust SDK for the [Webshare](https://www.webshare.io/) proxy API, covering all 100+ endpoints across 18 API groups.
 
